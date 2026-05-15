@@ -40,3 +40,90 @@ if (loginBtn) {
   });
 
 }
+
+const slides = document.querySelectorAll(".slide");
+
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+const currentSlideText = document.getElementById("currentSlide");
+const totalSlidesText = document.getElementById("totalSlides");
+
+const dotsContainer = document.getElementById("dotsContainer");
+
+let currentIndex = 0;
+
+if (slides.length > 0) {
+
+  totalSlidesText.textContent = slides.length;
+
+  // CRIAR BOLINHAS
+  slides.forEach((_, index) => {
+
+    const dot = document.createElement("div");
+
+    dot.classList.add("dot");
+
+    if (index === 0) {
+      dot.classList.add("active");
+    }
+
+    dot.addEventListener("click", () => {
+      goToSlide(index);
+    });
+
+    dotsContainer.appendChild(dot);
+
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  function updateSlider() {
+
+    slides.forEach(slide => {
+      slide.classList.remove("active");
+    });
+
+    dots.forEach(dot => {
+      dot.classList.remove("active");
+    });
+
+    slides[currentIndex].classList.add("active");
+
+    dots[currentIndex].classList.add("active");
+
+    currentSlideText.textContent = currentIndex + 1;
+
+  }
+
+  function goToSlide(index) {
+
+    currentIndex = index;
+
+    updateSlider();
+
+  }
+
+  nextBtn.addEventListener("click", () => {
+
+    currentIndex++;
+
+    if (currentIndex >= slides.length) {
+      currentIndex = 0;
+    }
+
+    updateSlider();
+
+  });
+
+  prevBtn.addEventListener("click", () => {
+
+    currentIndex--;
+
+    if (currentIndex < 0) {
+      currentIndex = slides.length - 1;
+    }
+
+    updateSlider();
+
+  });
