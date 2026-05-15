@@ -52,3 +52,307 @@ body {
 
   backdrop-filter: blur(10px);
 }
+
+.logo-box {
+  width: 80px;
+  height: 80px;
+
+  margin: 0 auto 25px;
+
+  border-radius: 22px;
+
+  background: linear-gradient(135deg, #8b5cf6, #f97316);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 34px;
+  font-weight: bold;
+
+  color: white;
+
+  box-shadow: 0 0 25px rgba(139,92,246,0.45);
+}
+
+.login-title {
+  font-size: 52px;
+  margin-bottom: 10px;
+}
+
+.login-subtitle {
+  color: #b8a8ff;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.credentials-box {
+  background: rgba(139,92,246,0.12);
+
+  border: 1px solid rgba(139,92,246,0.2);
+
+  border-radius: 16px;
+
+  padding: 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 30px;
+
+  font-size: 14px;
+}
+
+.credentials-box strong {
+  color: #f59e0b;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #b8a8ff;
+
+  font-size: 14px;
+
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+
+  background: rgba(139,92,246,0.08);
+
+  border: 1px solid rgba(139,92,246,0.25);
+
+  color: white;
+
+  padding: 16px;
+
+  border-radius: 16px;
+
+  transition: 0.3s;
+
+  outline: none;
+
+  font-size: 16px;
+}
+
+.input-group input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 15px rgba(139,92,246,0.25);
+}
+
+.input-group input::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+
+.login-button {
+  width: 100%;
+
+  padding: 18px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  margin-top: 10px;
+
+  box-shadow: 0 0 25px rgba(139,92,246,0.35);
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 35px rgba(139,92,246,0.5);
+}
+
+#message {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.content-box {
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* =========================
+   SLIDER
+========================= */
+
+.slider-container {
+  width: 100%;
+  height: 500px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background: linear-gradient(135deg, #1d1042, #3b32c4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 40px;
+
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+.slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 40px;
+
+  opacity: 0;
+
+  transform: scale(0.95);
+
+  transition: 0.6s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slide h1 {
+  font-size: 52px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.slide p {
+  font-size: 20px;
+  color: #d1d5db;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.tag {
+  background: rgba(255,255,255,0.15);
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  padding: 10px 25px;
+
+  border-radius: 999px;
+
+  font-weight: bold;
+
+  margin-bottom: 30px;
+}
+
+.icon {
+  width: 90px;
+  height: 90px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(135deg, #67e8f9, #22c55e);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 50px;
+
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.arrow {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: rgba(0,0,0,0.25);
+
+  color: white;
+
+  font-size: 30px;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(0,0,0,0.5);
+}
+
+.left {
+  left: 20px;
+}
+
+.right {
+  right: 20px;
+}
+
+.slide-counter {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  background: rgba(0,0,0,0.25);
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  font-weight: bold;
+
+  z-index: 10;
+}
