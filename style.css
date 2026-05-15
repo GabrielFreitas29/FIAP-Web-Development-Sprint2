@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #111827);
+  min-height: 100vh;
+  color: white;
+}
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-box {
+  width: 100%;
+  max-width: 460px;
+
+  background: rgba(24, 10, 54, 0.92);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 30px;
+
+  padding: 45px;
+
+  text-align: center;
+
+  box-shadow:
+    0 0 40px rgba(0,0,0,0.35),
+    0 0 60px rgba(139,92,246,0.12);
+
+  backdrop-filter: blur(10px);
+}
