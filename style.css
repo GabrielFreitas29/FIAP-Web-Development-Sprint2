@@ -356,3 +356,171 @@ body {
 
   z-index: 10;
 }
+
+.dots {
+  position: absolute;
+
+  bottom: 25px;
+
+  display: flex;
+  gap: 10px;
+
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.4);
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.dot.active {
+  width: 35px;
+  border-radius: 999px;
+  background: white;
+}
+
+/* =========================
+   TODO LIST
+========================= */
+
+.todo {
+  background: linear-gradient(135deg, #1d1042, #3b32c4);
+
+  padding: 30px;
+
+  border-radius: 20px;
+}
+
+.todo h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-input input {
+  flex: 1;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 16px;
+}
+
+.task-input button {
+  padding: 12px 20px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 16px;
+
+  transition: 0.3s;
+}
+
+.task-input button:hover {
+  background: #1d4ed8;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  background: rgba(255,255,255,0.1);
+
+  padding: 15px;
+
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  animation: fadeIn 0.5s ease;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn {
+  background: #f59e0b;
+}
+
+.edit-btn:hover {
+  background: #d97706;
+}
+
+.delete-btn {
+  background: #dc2626;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+.fade {
+  animation: fadeIn 1s ease;
+}
+
+.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+
+  0% { transform: translateX(0); }
+
+  20% { transform: translateX(-10px); }
+
+  40% { transform: translateX(10px); }
+
+  60% { transform: translateX(-10px); }
+
+  80% { transform: translateX(10px); }
+
+}
