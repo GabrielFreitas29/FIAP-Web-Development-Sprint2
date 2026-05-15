@@ -236,3 +236,55 @@ function createTaskElement(taskText) {
   document.getElementById("taskList").appendChild(li);
 
 }
+
+// SALVAR
+function saveTask(task) {
+
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+  tasks.push(task);
+
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+
+}
+
+// CARREGAR
+function loadTasks() {
+
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+  tasks.forEach(task => {
+
+    createTaskElement(task);
+
+  });
+
+}
+
+// REMOVER
+function removeTask(taskText) {
+
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+  tasks = tasks.filter(task => task !== taskText);
+
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+
+}
+
+// EDITAR
+function updateTask(oldTask, newTask) {
+
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+  const index = tasks.indexOf(oldTask);
+
+  if (index !== -1) {
+
+    tasks[index] = newTask;
+
+  }
+
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+
+}
