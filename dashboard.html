@@ -1,76 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Principal</title>
-
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <div class="container">
-
-    <div class="content-box fade">
-
-      <!-- SLIDER -->
-      <div class="slider-container">
-
-        <div class="slide-counter">
-          <span id="currentSlide">1</span>/<span id="totalSlides">3</span>
-        </div>
-
-        <button class="arrow left" id="prevBtn">
-          &#10094;
-        </button>
-
-        <div class="slides">
-
-          <div class="slide active">
-
-            <span class="tag">PRODUTIVIDADE</span>
-
-            <div class="icon">✔</div>
-
-            <h1>Organize suas tarefas com facilidade</h1>
-
-            <p>
-              Crie, edite e acompanhe tarefas diárias com persistência local.
-            </p>
-
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+  
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  
+    <div class="container">
+  
+      <div class="content-box fade">
+  
+        <!-- SLIDER -->
+        <div class="slider-container">
+  
+          <div class="slide-counter">
+            <span id="currentSlide">1</span>/<span id="totalSlides">3</span>
           </div>
+  
+          <button class="arrow left" id="prevBtn">
+            &#10094;
+          </button>
+  
+          <div class="slides">
+  
+            <div class="slide active">
+  
+              <span class="tag">PRODUTIVIDADE</span>
+  
+              <div class="icon">✔</div>
+  
+              <h1>Organize suas tarefas com facilidade</h1>
+  
+              <p>
+                Crie, edite e acompanhe tarefas diárias com persistência local.
+              </p>
+  
+            </div>
+            
+            <div class="slide">
+  
+              <span class="tag">FOCO</span>
+  
+              <div class="icon">★</div>
+  
+              <h1>Mantenha o foco nas prioridades</h1>
+  
+              <p>
+                Visualize rapidamente o que é mais importante no seu dia.
+              </p>
+  
+            </div>
+  
+            <div class="slide">
+  
+              <span class="tag">DESEMPENHO</span>
+  
+              <div class="icon">⚡</div>
+  
+              <h1>Aumente sua produtividade</h1>
+  
+              <p>
+                Trabalhe com organização, eficiência e praticidade.
+              </p>
+  
+            </div>
+  
+          </div>
+  
+          <button class="arrow right" id="nextBtn">
+            &#10095;
+          </button>
           
-          <div class="slide">
-
-            <span class="tag">FOCO</span>
-
-            <div class="icon">★</div>
-
-            <h1>Mantenha o foco nas prioridades</h1>
-
-            <p>
-              Visualize rapidamente o que é mais importante no seu dia.
-            </p>
-
-          </div>
-
-          <div class="slide">
-
-            <span class="tag">DESEMPENHO</span>
-
-            <div class="icon">⚡</div>
-
-            <h1>Aumente sua produtividade</h1>
-
-            <p>
-              Trabalhe com organização, eficiência e praticidade.
-            </p>
-
-          </div>
-
+          <div class="dots" id="dotsContainer"></div>
+  
         </div>
-
-        <button class="arrow right" id="nextBtn">
-          &#10095;
-        </button>
-          
+  
+        <!-- TODO LIST -->
+        <div class="todo">
+  
+          <h2>Lista de Tarefas</h2>
+  
+          <div class="task-input">
+  
+            <input
+              type="text"
+              id="taskInput"
+              placeholder="Digite uma tarefa"
+            >
+  
+            <button id="addTaskBtn">
+              Adicionar
+            </button>
+  
+          </div>
+  
+          <ul id="taskList"></ul>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    <script src="script.js"></script>
+  
+  </body>
+</html>
