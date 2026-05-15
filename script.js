@@ -127,3 +127,112 @@ if (slides.length > 0) {
     updateSlider();
 
   });
+
+  setInterval(() => {
+
+    currentIndex++;
+
+    if (currentIndex >= slides.length) {
+      currentIndex = 0;
+    }
+
+    updateSlider();
+
+  }, 5000);
+
+}
+
+// LISTA
+
+const addTaskBtn = document.getElementById("addTaskBtn");
+
+if (addTaskBtn) {
+
+  loadTasks();
+
+  addTaskBtn.addEventListener("click", addTask);
+
+}
+
+// ADICIONAR TAREFA
+function addTask() {
+
+  const taskInput = document.getElementById("taskInput");
+
+  const taskText = taskInput.value.trim();
+
+  if (taskText === "") return;
+
+  createTaskElement(taskText);
+
+  saveTask(taskText);
+
+  taskInput.value = "";
+  alert("Tarefa Adicionada!");
+
+}
+
+// CRIAR ELEMENTO DA TAREFA
+function createTaskElement(taskText) {
+
+  const li = document.createElement("li");
+
+  const span = document.createElement("span");
+
+  span.textContent = taskText;
+
+  const buttonsDiv = document.createElement("div");
+
+  buttonsDiv.classList.add("task-buttons");
+
+  // EDITAR
+  const editBtn = document.createElement("button");
+
+  editBtn.textContent = "Editar";
+
+  editBtn.classList.add("edit-btn");
+
+  editBtn.addEventListener("click", () => {
+
+    const oldText = span.textContent;
+
+    const newTask = prompt("Editar tarefa:", oldText);
+
+    if (newTask !== null && newTask.trim() !== "") {
+
+      span.textContent = newTask;
+
+      updateTask(oldText, newTask);
+      alert("Tarefa Editada!");
+
+    }
+
+  });
+
+  // REMOVER
+  const deleteBtn = document.createElement("button");
+
+  deleteBtn.textContent = "Remover";
+
+  deleteBtn.classList.add("delete-btn");
+
+  deleteBtn.addEventListener("click", () => {
+
+    li.remove();
+
+    removeTask(taskText);
+    alert("Tarefa removida!");
+
+  });
+
+  buttonsDiv.appendChild(editBtn);
+
+  buttonsDiv.appendChild(deleteBtn);
+
+  li.appendChild(span);
+
+  li.appendChild(buttonsDiv);
+
+  document.getElementById("taskList").appendChild(li);
+
+}
